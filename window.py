@@ -13,6 +13,7 @@ class Window:
         self.dlg.SelectFile.clicked.connect(self.selectFile)
         self.dlg.barchart.clicked.connect(self.BarChart)
         self.dlg.extrapolate.clicked.connect(self.extrapolate)
+        self.dlg.compBar.clicked.connect(self.component_bar)
         self.dlg.show()
         app.exec()
 
@@ -104,6 +105,25 @@ class Window:
         
     # t test function
     # stats.ttest_ind(df['Agriculture'], df['Industrial Sector'])
+
+    def component_bar(self):
+        df = pd.read_csv(self.file)
+        a = df['Agriculture']
+        b = df['Industrial Sector']
+        c = df['Services Sector']
+        d = df['Gross Domestic Product (FC)']
+        x = df['Year']
+        x_indexes = np.arange(len(x))
+        width = 0.2
+        plt.bar(x_indexes-width,a,width=width,label='Agriculture')
+        plt.bar(x_indexes-width-width,b,width=width, label='Industrial sector')
+        plt.bar(x_indexes+width,c,width=width, label='Services Sector')
+        plt.bar(x_indexes,d,width=width,label='Gross Domestic Product')
+        # plt.xticks(x_indexes,x)
+        plt.xlabel('Years')
+        plt.ylabel('Million Rupees')
+        plt.legend()
+        plt.show()
 
 
 
