@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>581</width>
     <height>600</height>
    </rect>
   </property>
@@ -37,15 +37,47 @@
      </rect>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>100</y>
-      <width>541</width>
-      <height>391</height>
+      <x>50</x>
+      <y>120</y>
+      <width>461</width>
+      <height>361</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>461</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>461</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <column>
+     <property name="text">
+      <string>Agriculture</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Industrial Sector</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Services Sector</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Domestic Product</string>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
